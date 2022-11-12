@@ -37,12 +37,7 @@
     <div id="disItem"></div>
 </body>
     <script>
-        const myJson = [{
-            firstName:"ishwar",
-            lastName:"suthar",
-            phoneNo:"12315",
-            city:"asind"
-        }];
+        const myJson = [];
 
 
         function display()
@@ -51,9 +46,6 @@
         const myitemsArray = myJson.map(function(value,index,array) {
 
                 return mydd += `<div>${value.lastName}</div>`;
-            
-            
-
         });
 
         console.log(myitemsArray);
@@ -64,6 +56,17 @@
 
     function addItems()
     {
+        let fname = document.getElementById('fname').value;
+        let lname = document.getElementById('lname').value;
+        let phone = document.getElementById('phone').value;
+        let city = document.getElementById('city').value;
+       let mydata= {
+            firstName:fname,
+            lastName:lname,
+            phoneNo:phone,
+            city:city
+        }
+        myJson.push(mydata);
         display()
     }
     </script>

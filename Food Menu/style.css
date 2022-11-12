@@ -1,0 +1,72 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.ourmenu{
+    background-color: hsl(210, 36%, 96%);
+    padding: 5%;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    font-family: sans-serif;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+img{
+    width: 250px;
+    height: 150px;
+    margin: 5px;
+    border: 3px solid rgb(167, 117, 52);
+    border-radius: 10px;
+}
+.underline{
+    width: 80px;
+    height: 5px;
+    background-color: rgb(167, 117, 52);
+    margin: 10px auto;
+}
+.selection{
+    width: 60%;
+    margin: 10px auto;
+}
+.btn{
+    padding: 5px 33px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid rgb(167, 117, 52);
+    border-radius: 8px;
+    color: rgb(167, 117, 52);
+    margin: 33px 5px;
+}
+.btn:hover{
+    background-color: rgb(167, 117, 52);
+    color: #fff;
+}
+.foodList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    width: 50%;
+    display: flex;
+}
+h4{
+    margin: 10px 5px;
+    border-bottom: 1px dotted gray;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+span{
+    margin-left: 50px;
+    color: rgb(167, 117, 52);
+}
+p{
+    margin: 10px 5px;
+    letter-spacing: 1.2px;
+    font-size: 14px;
+    color: rgb(52, 97, 93);
+}
