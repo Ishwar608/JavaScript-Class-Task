@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oparetion with JSON Array</title>
+</head>
+    <style>
+        form{
+            width: 50%;
+            margin: auto;
+        }
+        input,button{
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            border: 1px solid rgb(227, 225, 225);
+        }
+       .btn{
+        background-color: azure;
+        font-size: 18px;
+        padding: 5px 33px;
+        margin-left: 270px;
+       }
+       
+    </style>
+<body>
+    <form action="#" target="_self">
+        <input type="text" id="fname" placeholder="Enter your First Name">
+        <input type="text" id="lname" placeholder="Enter your Last Name"><br>
+        <input type="text" id="phone" placeholder="Enter your Mobile No.">
+        <input type="text" id="city" placeholder="Enter your City"><br>
+        <button class="btn" onclick="addItems()">Display</button>
+    </form>
+    <div id="disItem"></div>
+</body>
+    <script>
+        const myJson = [{
+            firstName:"ishwar",
+            lastName:"suthar",
+            phoneNo:"12315",
+            city:"asind"
+        }];
+
+
+        function display()
+    {
+        let mydd='';
+        const myitemsArray = myJson.map(function(value,index,array) {
+
+                return mydd += `<div>${value.lastName}</div>`;
+            
+            
+
+        });
+
+        console.log(myitemsArray);
+       document.getElementById("disItem").innerHTML = myitemsArray.join(" ");
+
+    }
+
+
+    function addItems()
+    {
+        display()
+    }
+    </script>
+</html>
