@@ -132,11 +132,11 @@
 
     function addItems() {
        
+        var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var phone = document.getElementById('phone').value;
+    var city = document.getElementById('city').value;
         if(isEdit != -1) {
-            var fname = document.getElementById('fname').value;
-        var lname = document.getElementById('lname').value;
-        var phone = document.getElementById('phone').value;
-        var city = document.getElementById('city').value;
 
         var mydata = {
             firstName: fname,
@@ -147,11 +147,6 @@
         myJson[isEdit]=mydata;
         }
         else { 
-        var fname = document.getElementById('fname').value;
-        var lname = document.getElementById('lname').value;
-        var phone = document.getElementById('phone').value;
-        var city = document.getElementById('city').value;
-
         var mydata = {
             firstName: fname,
             lastName: lname,
