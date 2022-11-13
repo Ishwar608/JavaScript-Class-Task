@@ -105,8 +105,9 @@
 
 <script>
 
-    const myJson = [];
-
+    let myJson = [];
+    let isEdit = -1;
+ 
 
     function display() {
         const myitemsArray = myJson.map(function (value, index) {
@@ -118,8 +119,9 @@
         
         document.getElementById("disItem").innerHTML = myitemsArray.join(" ");
     }
+
     function pass(value,index){
-        let text = '';
+        var text = '';
             
             for (const key in value) {
                  text += `<td>${value[key]}</td>`;
@@ -129,27 +131,47 @@
     }
 
     function addItems() {
-        let fname = document.getElementById('fname').value;
-        let lname = document.getElementById('lname').value;
-        let phone = document.getElementById('phone').value;
-        let city = document.getElementById('city').value;
+       
+        if(isEdit != -1) {
+            var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var phone = document.getElementById('phone').value;
+        var city = document.getElementById('city').value;
 
-        let mydata = {
+        var mydata = {
             firstName: fname,
             lastName: lname,
             phoneNo: phone,
             city: city
         }
-        
+        myJson[isEdit]=mydata;
+        }
+        else { 
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var phone = document.getElementById('phone').value;
+        var city = document.getElementById('city').value;
+
+        var mydata = {
+            firstName: fname,
+            lastName: lname,
+            phoneNo: phone,
+            city: city
+        }
+       
         myJson.push(mydata);
-        display()
+        }
+        isEdit=-1;
+
+        display();
+
+       
     }
 
 
     function removeItmes(index)
     {
         var  myitems1 = myJson.filter(function(value,op) {
-            debugger;
             if(op != index)
             {
                 return value;
@@ -160,17 +182,19 @@
         myJson = myitems1;
 
         display();
-
     }
+   
     function editItems(index)
     {
+        debugger;
         isEdit= index;
-        document.getElementById('fname').value = myJson[index];
-        document.getElementById('lname').value = myJson[index];
-        document.getElementById('phone').value = myJson[index];
-        ocument.getElementById('city').value = myJson[index];
-
+         document.getElementById("fname").value =myJson[index].firstName;
+         document.getElementById("lname").value =myJson[index].lastName;
+         document.getElementById("phone").value =myJson[index].phoneNo;
+         document.getElementById("city").value =myJson[index].city;
+        //console.log(myJson);
     }
+
 </script>
 
 </html>

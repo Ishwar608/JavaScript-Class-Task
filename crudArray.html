@@ -25,7 +25,7 @@
     {
         const myitemsArray = myitems.map(function(value,index) {
 
-            return `<div>${array}<button onclick='editItems(${index})'>edit</button><button onclick="removeItmes('${index}')">delete</button></div>`
+            return `<div>${value}<button onclick='editItems(${index})'>edit</button><button onclick="removeItmes('${index}')">delete</button></div>`
 
 
         });
@@ -35,14 +35,13 @@
 
     }
 
-    function addItems()
-    {
-        if(isEdit != -1)
-        {
+    function addItems() {
+        debugger;
+        if(isEdit != -1) {
             myitems[isEdit] = document.getElementById("itens").value
         }
-        else
-        {
+
+        else {
         var myitem = document.getElementById("itens").value;
         myitems.push(myitem);
         }
@@ -50,41 +49,31 @@
         isEdit=-1;
 
         display();
-
-
-
     }
 
     function removeItmes(index)
     {
-        var  myitems1 = myitems.filter(
-            function(value,op) {
-
+        var  myitems1 = myitems.filter(function(value,op) {
             if(op != index)
             {
-
                 return value;
             }
 
         });
 
         myitems = myitems1;
-
         display();
 
     }
 
     function editItems(index)
     {
+        debugger;
         isEdit= index;
         document.getElementById("itens").value =myitems[index];
-
-
     }
 
 
 </script>
-
-   
 </body>
 </html>
