@@ -7,67 +7,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oparetion with JSON Array</title>
 </head>
-    <style>
-        form{
-            width: 50%;
-            margin: auto;
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    table,
+        td,
+        th {
+            border: 1px solid;
         }
-        input,button{
-            margin: 5px;
-            padding: 5px 10px;
-            border-radius: 8px;
-            border: 1px solid rgb(227, 225, 225);
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
-       .btn{
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    form {
+        width: 50%;
+        margin: auto;
+    }
+
+    input,
+    button {
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1px solid rgb(227, 225, 225);
+    }
+
+    .btn {
         background-color: azure;
         font-size: 18px;
         padding: 5px 33px;
-        margin-left: 270px;
-       }
-       
-    </style>
+        margin-left: 48%;
+    }
+</style>
+
 <body>
-    <form action="#" target="_self">
-        <input type="text" id="fname" placeholder="Enter your First Name">
-        <input type="text" id="lname" placeholder="Enter your Last Name"><br>
-        <input type="text" id="phone" placeholder="Enter your Mobile No.">
-        <input type="text" id="city" placeholder="Enter your City"><br>
+    <div class="container">
+        <form action="#" target="_self">
+            <input type="text" id="fname" placeholder="Enter your First Name">
+            <input type="text" id="lname" placeholder="Enter your Last Name"><br>
+            <input type="text" id="phone" placeholder="Enter your Mobile No.">
+            <input type="text" id="city" placeholder="Enter your City"><br>
+        </form>
+
         <button class="btn" onclick="addItems()">Display</button>
-    </form>
-    <div id="disItem"></div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Moblie No.</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="disItem"></tbody>
+        </table>
+    </div>
+
 </body>
-    <script>
-        const myJson = [];
+
+<script>
+
+    const myJson = [];
 
 
-        function display()
-    {
-        let mydd='';
-        const myitemsArray = myJson.map(function(value,index,array) {
+    function display() {
+        const myitemsArray = myJson.map(function (value, index) {
 
-                return mydd += `<div>${value.lastName}</div>`;
+                return `<tr>${pass(value,index)}</tr><button onclick='editItems(${index})'>edit</button><button onclick="removeItmes('${index}')">delete</button>`
+            
         });
 
-        console.log(myitemsArray);
-       document.getElementById("disItem").innerHTML = myitemsArray.join(" ");
-
+        
+        document.getElementById("disItem").innerHTML = myitemsArray.join(" ");
+    }
+    function pass(value,index){
+        let text = '';
+            
+            for (const key in value) {
+                 text += `<td>${value[key]}</td>`;
+                    
+            }
+            return text;
     }
 
-
-    function addItems()
-    {
+    function addItems() {
         let fname = document.getElementById('fname').value;
         let lname = document.getElementById('lname').value;
         let phone = document.getElementById('phone').value;
         let city = document.getElementById('city').value;
-       let mydata= {
-            firstName:fname,
-            lastName:lname,
-            phoneNo:phone,
-            city:city
+
+        let mydata = {
+            firstName: fname,
+            lastName: lname,
+            phoneNo: phone,
+            city: city
         }
+        
         myJson.push(mydata);
         display()
     }
-    </script>
+
+
+    function removeItmes(index)
+    {
+        var  myitems1 = myJson.filter(function(value,op) {
+            debugger;
+            if(op != index)
+            {
+                return value;
+            }
+
+        });
+
+        myJson = myitems1;
+
+        display();
+
+    }
+    function editItems(index)
+    {
+        isEdit= index;
+        document.getElementById('fname').value = myJson[index];
+        document.getElementById('lname').value = myJson[index];
+        document.getElementById('phone').value = myJson[index];
+        ocument.getElementById('city').value = myJson[index];
+
+    }
+</script>
+
 </html>
