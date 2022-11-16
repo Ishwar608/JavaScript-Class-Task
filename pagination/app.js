@@ -209,3 +209,29 @@ var mydata = [
     rating: { rate: 3.6, count: 145 },
   },
 ];
+
+
+
+const printData = mydata.map(function (value, index) {
+  return `<tr> ${display(value)}</tr>`;
+
+});
+
+function display(Value) {
+  let text = '';
+  for (const key in Value) {
+    if (key == 'image') {
+      text += `<td><img src='${Value[key]}'/></td>`;
+    }
+    else {
+        text += `<td>${Value[key]}</td>`;
+    }
+  }
+
+  return text;
+}
+
+document.getElementById("test").innerHTML = printData.join(" ");
+
+
+

@@ -83,15 +83,22 @@
             
             for (const key in value) {
                 if (typeof value[key] !== "object") {
+                    
+                    if(key == "image")
+                    {
+                        text += `<td><img src="${value[key]}" /></td>`;
+                    }
+                    else
+                    {
                     text += `<td>${value[key]}</td>`;
+                    }
                     
                 }
             }
             return text;
         }
 
-        document.getElementById("test").innerHTML =
-            printTable.join(" ");
+        document.getElementById("test").innerHTML = printTable.join(" ");
 
 
     </script>
