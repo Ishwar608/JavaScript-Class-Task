@@ -47,28 +47,9 @@
         img{
             width: 100px;
         }
-        .pagebutton{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        button{
-            padding: 20px;
-            margin: 10px;
-            border: none;
-            color: navy;
-            background: rgb(213, 211, 211);
-            border-radius: 8px;
-            font-weight: 800;
-        }
-        button:hover{
-            background: navy;
-            color: white;
-        }
     </style>
 
 </head>
-
 <body>
     <table id="customers">
         <thead>
@@ -87,8 +68,44 @@
    
     </table>
 
-    <div class="pagebutton" id="pagebutton"> </div>
-
+    <div id="pageBtn"></div>
 </body>
-<script src="app.js"></script>
+<script>
+    let mydata = [
+    {
+    id: 1,
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    description:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    category: "men's clothing",
+    rating: { rate: 3.9, count: 120 },
+  },
+  {
+    id: 2,
+    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    price: 109.95,
+    description:
+      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    category: "men's clothing",
+    rating: { rate: 3.9, count: 120 },
+  }
+]
+
+//   for (const key in mydata) {
+//         console.log(typeof key);
+//           if(typeof mydata[key] === 'object') {
+//             console.table(mydata[key])
+//             document.getElementById('test').innerHTML = `<td> ${mydata[key]}</td>`
+//           }
+    
+//   }
+//  let mynre =mydata.map(function(value,index){
+//     return typeof value.rating;
+// })
+
+
+console.log(mydata[0].rating.rate)
+
+</script>
 </html>

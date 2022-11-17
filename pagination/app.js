@@ -212,26 +212,76 @@ var mydata = [
 
 
 
-const printData = mydata.map(function (value, index) {
-  return `<tr> ${display(value)}</tr>`;
 
-});
+var state = {
+  'myjson': mydata,
+  'page': 1,
+  'row': 5,
+}
+
+//   # pagination 
+
+const pagination = (myjson, page, row) => {
+  var trimstart = (page - 1) * row;
+  var trimend = trimstart + row;
+  var trimdata = myjson.slice(trimstart, trimend);
+  var pages = myjson.length / row
+  return {
+    'myjson': trimdata,
+    'pages': pages
+  }
+
+
+}
+
+
+const btncontainer = (pages) => {
+  var pagebutton = document.getElementById("pagebutton");
+  pagebutton.innerHTML = "";
+  for (var page = 1; page <= pages; page++) {
+    pagebutton.innerHTML += `<button  onClick="movepage('${page}')">${page} </button>`
+  }
+
+
+}
+const movepage = (page) => {
+  state.page = page
+  buildtabel();
+}
+
+function buildtabel() {
+  var data = pagination(state.myjson, state.page, state.row);
+  
+  mylist = data.myjson;
+
+  let mytr = "";
+  const printData = mylist.map(function (value, index) {
+    return `<tr> ${display(value)}</tr>`;
+    
+  });
+  document.getElementById("test").innerHTML = printData.join(" ");
+  btncontainer(data.pages);
+
+}
 
 function display(Value) {
   let text = '';
+  let c='';
   for (const key in Value) {
     if (key == 'image') {
       text += `<td><img src='${Value[key]}'/></td>`;
     }
+
     else {
         text += `<td>${Value[key]}</td>`;
-    }
+        
+      }
   }
-
   return text;
 }
 
-document.getElementById("test").innerHTML = printData.join(" ");
+
+buildtabel();
 
 
 
