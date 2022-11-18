@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="num">Only Number:-</label>
+    <input type="text" name="num" maxlength="10" onkeypress="return checkNumber(event)"><br><br>
+    
+    <label for="txt">Enter Your Full Name:-</label>
+    <input type="text" id="txt" name="txt" onclick="sortName()">
+    
+    </form>
+    <div>Sort name :- <span id="txtPrint"></span></div>
+    
+</body>
+<script>
+   function checkNumber(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+
+         return true;
+      }
+
+    function sortName() {
+        let val = document.getElementById('txt').value;
+        let str="";
+        const mytxt = val.split(" ");
+        for (let i = 0; i < mytxt.length; i++) {
+
+                str += mytxt[i].substr(0 ,1) + " ";
+                
+            }
+            document.getElementById('txtPrint').innerHTML= str;
+       
+    }
+    window.oncontextmenu = function () {
+   return false;
+}
+</script>
+</html>
