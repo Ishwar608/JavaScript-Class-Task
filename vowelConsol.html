@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the vowel no</title>
+    <style>
+        div{
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>Your String :- <span id="str"></span></div>
+    <div>Vowel :- <span id="vowel"></span></div>
+
+</body>
+    <script>
+        let myStr = `How are you doing today? Google's service, offered free of charge, instantly translates words, phrases, and web pages `;
+        let vowel = ['a','e','i','o','u','A','E','U','I','O'];
+       const mySplit = myStr.split('');
+       
+       const mydata = mySplit.filter( function (value,index) {
+        
+           for (const iterator of vowel) {
+                if(value == iterator)     {
+                  return value;  
+                }
+               
+                }
+           
+    });
+    document.getElementById('str').innerHTML = myStr;
+   document.getElementById('vowel').innerHTML = mydata + '<br>' + 'Count Vowel :- ' + mydata.length;
+    </script>
+</html>
