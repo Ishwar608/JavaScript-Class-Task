@@ -36,7 +36,7 @@
     }
 
     function addItems() {
-        debugger;
+      //  debugger;
         if(isEdit != -1) {
             myitems[isEdit] = document.getElementById("itens").value
         }
@@ -53,15 +53,17 @@
 
     function removeItmes(index)
     {
-        var  myitems1 = myitems.filter(function(value,op) {
-            if(op != index)
-            {
-                return value;
-            }
 
-        });
+        myitems.splice(index,1);
+        // var  myitems1 = myitems.filter(function(value,op) {
+        //     if(op != index)
+        //     {
+        //         return value;
+        //     }
 
-        myitems = myitems1;
+        // });
+
+        // myitems = myitems1;
         display();
 
     }

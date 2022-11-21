@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Sort</title>
+    <style>
+        input{
+            margin: 10px;
+        }
+        div{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" name="" id="txt" placeholder="Enter a Date">
+    <button onclick="pushDate()">Add Date</button>
+    <button onclick="sortDate()">Sort Date</button>
+
+    <div id="display"></div>
+</body>
+<script>
+    let dateArray = [];
+    
+
+    function pushDate(value){
+        //let d = new date();
+        let d = document.getElementById('txt').value;
+        dateArray.push(new Date(d));
+
+        console.log(dateArray); 
+        document.getElementById('display').innerHTML = dateArray.join("<br/>");
+
+    }
+    function sortDate(tdate){
+        let sortDate = dateArray.sort(function (a,b) {
+            return(a-b);
+        })
+        document.getElementById('display').innerHTML = sortDate.join("<br/>");
+    }
+
+</script>
+</html>
