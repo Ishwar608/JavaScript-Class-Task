@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arrayData = ['alice','bob','lily','alice','lily'];
+
+    let reduceData = arrayData.reduce(function(prev , value){
+        const curvalue = prev[value] ||0;
+        return {
+            ...prev,
+            [value]:curvalue+1,
+        };
+    },{})
+    console.log(reduceData);
+</script>
+</html>
