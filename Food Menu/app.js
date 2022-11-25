@@ -86,7 +86,7 @@ const menu = [
    function Display() {
     const productcard = menu.map(function (value, index, array) {
       return `<div class="item">
-                 <img src=${value.img}>
+                 <img  class="img" src=${value.img}>
                  <div class="contant"> 
                  <h4>${value.title}<span>$${value.price}</span></h4>
                  <p>${value.desc}</p>

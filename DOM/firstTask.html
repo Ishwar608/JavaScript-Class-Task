@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input the value and the CheckBox</title>
+    <style>
+        input {
+            margin: 5px;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="name" placeholder="Enter Your Name">
+        <input type="text" id="marks" placeholder="Enter Your Mark">
+        <button onclick="addItem()">Add</button>
+    </div>
+    <div>
+        <input type="text" id="change" placeholder="Change The Value">
+        <input type="button" value="Change Value" onclick="changeValue()">
+    </div>
+    <div id="display">
+    </div>
+</body>
+<script>
+
+
+    function addItem() {
+        let name = document.getElementById('name').value;
+        let myData = document.getElementById('marks').value;
+
+        document.getElementById('display').innerHTML += `<div>
+             <label>${name}</label>
+            <input type="text" value="${myData}" class="txtValue">
+            <input type="checkbox" class="checkVal">
+            <button onclick="increament(this)">+</button>
+            <button onclick="decreament(this)">-</button>
+            </div>`;
+    }
+    function changeValue() {
+        // let myd = document.getElementsByClassName('txtValue');
+        let myData = document.getElementById('change').value;
+
+        let a = document.querySelectorAll("input:checked").length;
+
+        if (a == 0) {
+            let marklength = document.querySelectorAll(".txtValue").length;
+            for (i = 0; i < marklength; i++) {
+                document.querySelectorAll(".txtValue")[i].value = myData;
+            }
+        }
+
+        else {
+        let marklength = document.getElementsByClassName('txtValue').length;
+            for (i = 0; i < marklength; i++) {
+                let d = document.getElementsByClassName("txtValue")[i].parentElement.querySelector("input:checked");
+                if (d) {
+                    document.getElementsByClassName("txtValue")[i].value = myData;
+
+                }
+            }
+
+        }
+    }
+
+
+    function increament(data) {
+        data.parentElement.getElementsByTagName('input')[0].value++;
+    }
+    function decreament(data) {
+        data.parentElement.getElementsByTagName('input')[0].value--;
+    }
+</script>
+
+</html>

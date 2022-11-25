@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e753c6f55b.js" crossorigin="anonymous"></script>
     <title>Table Print</title>
     <style>
     *{
@@ -88,8 +89,8 @@
         margin: 5px;
         padding: 8px;
     }
-    #btn{
-        width: 50%;
+    .page{
+        width: 30%;
         margin: auto;
     }
    </style>
@@ -113,7 +114,11 @@
             </tbody>
         </table>
 
-        <div id="btn"></div>
+        <div class="page">
+            <button onclick="preButton()">	&lt;</button>
+            <span id="btn"></span>
+            <button onclick="nextButton()">	&gt;</button>
+        </div>
     </div>
       
        
