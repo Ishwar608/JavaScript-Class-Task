@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="data">
+        <div class="main">
+            <label>All</label>
+            <input type="checkbox" onclick="allChecked()" id="all" />
+            <div class="first">
+                <label>Checkbox1</label>
+                <input type="checkbox" id="first" onclick="firstCheckbox()"/>
+
+                <div>
+                    <input type="checkbox" class="first1" onclick="child1()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="first1" onclick="child1()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="first1" onclick="child1()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="first1" onclick="child1()"/>
+                </div>
+
+
+            </div>
+
+            <div class="secound">
+                <label>Checkbox2</label>
+                <input type="checkbox" id="secund" onclick="secondCheckbox()"/>
+
+                <div>
+                    <input type="checkbox" class="secund2" onclick="child2()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="secund2" onclick="child2()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="secund2" onclick="child2()"/>
+                </div>
+                <div>
+                    <input type="checkbox" class="secund2" onclick="child2()"/>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+<script>
+   let d = document.forms['data'];
+   let all = document.getElementById('all');
+    let checkTag = document.getElementsByTagName('input');
+    let val = document.querySelectorAll('input:checked').length;
+ 
+
+    function allChecked() {
+    for (const num of checkTag) {
+        num.checked = all.checked;
+    }
+    }
+ function firstCheckbox() {
+    let checkVal = document.getElementById('first');
+    let child = document.getElementsByClassName('first1');
+    for (const num of child) {
+        num.checked = checkVal.checked;
+    }
+ }
+ function child1() {
+     let child = document.querySelectorAll('.first1:checked').length;
+    if(child==4) {
+        document.getElementById('first').checked = true;
+    }
+    else{
+        document.getElementById('first').checked = false;
+    }
+        
+ }
+ function child2() {
+     let child = document.querySelectorAll('.secund2:checked').length;
+    if(child==4) {
+        document.getElementById('secund').checked = true;
+    }
+    else{
+        document.getElementById('secund').checked = false;
+        document.getElementById('all').checked = false;
+    }
+        
+ }
+ function secondCheckbox() {
+    let checkVal = document.getElementById('secund');
+    let child = document.getElementsByClassName('secund2');
+    for (const num of child) {
+        num.checked = checkVal.checked;
+    }
+ }
+
+</script>
+
+</html>
