@@ -6,7 +6,7 @@ function display() {
 
     for (let i = 0; i < d.length; i++) {
 
-        
+
         switch(d.elements[i].type){
             case "radio":
                 if(d.elements[i].checked){
@@ -36,7 +36,9 @@ function display() {
         return `<tr> ${displayTableData(value)} </tr>`;
     });
     document.getElementById("test").innerHTML = printTable.join(" ");
-}
+
+   
+ }
 function displayTableData(value) {
     let text = '';
     for (const key in value) {
@@ -53,12 +55,15 @@ function displayTableData(value) {
 
 
 function validation() {
-    for (i = 0; i < d.length; i++) {
-        let d = document.getElementsByTagName("input")[i] = "hii";
-        console.log(d);
-        if (d) {
-            alert("Please Enter the value");
-        }
+   for(let i=0;i<d.length;i++) {
+    if(d.elements[i].checked == false && d.elements[i].empty){
+        alert("Please Fill Box");
+        break;
     }
-    console.log("helo");
+    else{
+        display();
+        break;
+    }
+   }
 }
+

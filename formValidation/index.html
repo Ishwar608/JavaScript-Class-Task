@@ -19,6 +19,8 @@
             <input type="text" name="Address"><br>
             <label for="Mobile">Mobile</label>
             <input type="text" name="Mobile"><br>
+            <label for="Mobile">Email</label>
+            <input type="email" name="Email"><br>
             <label for="Gender">Gender</label>
             <input type="radio" name="gender" value="Male"> Male 
             <input type="radio" name="gender" value="Female"> Female  <br> 
@@ -36,8 +38,8 @@
             </select>
 
 
+            <button onclick="validation()">Save</button>
         </form>
-        <button onclick="display()">Save</button>
         <div id="demo"></div>
        
         <table id="customers">
@@ -47,6 +49,7 @@
                     <th>Last Name</th>
                     <th>Address</th>
                     <th>Mobile</th>
+                    <th>Email</th>
                     <th>Gender</th>
                     <th>Hobies</th>
                     <th>Subject</th>

@@ -12,9 +12,9 @@
     
 }
 form{
-    width: 40%;
+    width: 42%;
     margin: auto;
-    padding: 30px;
+    padding: 10px 30px;
     border: 2px solid black;
     border-radius: 33px;
     /* background: ; */
@@ -34,15 +34,8 @@ label{
 }
 button{
     width: 200px;
-    margin: 10px;
+    margin: 10px 100px;
     padding: 5px 10px;
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-
 }
 
 table,
