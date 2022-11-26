@@ -1,45 +1,64 @@
 let d = document.forms['frm'];
 let myData = [];
-let myJson = {};
-let key1 = [];
-let val = [];
-let countBtn = 1;
+
 function display() {
-    // for(let i=0;i<d.length;i++) {
-    // key1.push(d.elements[i].name);
-    // val.push(d.elements[i].value);
-    // }
-    // for(let j=0;j<d.length;j++){
-    //     myData.push({[key1[j]]:val[j]});
-    // }
+    let ob = {};
 
+    for (let i = 0; i < d.length; i++) {
 
-    for(let i=0;i<d.length;i++) {
-              val.push(d.elements[i].name);
-             val.push(d.elements[i].value);
         
+        switch(d.elements[i].type){
+            case "radio":
+                if(d.elements[i].checked){
+                    ob[d.elements[i].name] = d.elements[i].value;    
+                }
+                break
+            case 'checkbox':
+                 
+                 if(d.elements[i].checked){
+
+                    if(typeof ob[d.elements[i].name]  == 'undefined'){
+                        ob[d.elements[i].name] = [d.elements[i].value];
+                    }else{
+                        ob[d.elements[i].name].push(d.elements[i].value);   
+                    } 
+                }
+
+                break;
+            default:
+                ob[d.elements[i].name] = d.elements[i].value;
+                break;
         }
-        myData.push(val); 
-     val=[];   
-    console.log(myData);
-    console.log(myJson);
+    }
+    myData.push(ob);
 
-// console.log(myData);
-// const printTable = myData.map(function (value, index) {
-//     return `<tr> ${displayTableData(value)} </tr>`;
-// });
-// document.getElementById("test").innerHTML = printTable.join(" ");
-
+    const printTable = myData.map(function (value, index) {
+        return `<tr> ${displayTableData(value)} </tr>`;
+    });
+    document.getElementById("test").innerHTML = printTable.join(" ");
 }
-
-
-
 function displayTableData(value) {
-    let text = ''; 
+    let text = '';
     for (const key in value) {
+        if (typeof value[key] === 'object') {
+                text += `<td>${value[key]}</td>`;
+        }
+        else {
             text += `<td>${value[key]}</td>`;
-            }
-        
+        }
+    }
+
     return text;
 }
 
+
+function validation() {
+    for (i = 0; i < d.length; i++) {
+        let d = document.getElementsByTagName("input")[i] = "hii";
+        console.log(d);
+        if (d) {
+            alert("Please Enter the value");
+        }
+    }
+    console.log("helo");
+}

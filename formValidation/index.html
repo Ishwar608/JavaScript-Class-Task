@@ -19,6 +19,23 @@
             <input type="text" name="Address"><br>
             <label for="Mobile">Mobile</label>
             <input type="text" name="Mobile"><br>
+            <label for="Gender">Gender</label>
+            <input type="radio" name="gender" value="Male"> Male 
+            <input type="radio" name="gender" value="Female"> Female  <br> 
+            <label for="Gender">Hobies</label>
+            <input type="checkbox" name="Hobies" class="txtcheck" value="Singing">Singing
+            <input type="checkbox" name="Hobies" class="txtcheck" value="Dance">Dance
+            <input type="checkbox" name="Hobies" class="txtcheck" value="walking">walking<br>
+            <label for="Gender">Subject</label>
+            <select name="subject">
+                <option value="">....Select....</option>
+                <option value="C++">C++</option>
+                <option value="java">java</option>
+                <option value="python">python</option>
+                <option value="HTML">HTML</option>
+            </select>
+
+
         </form>
         <button onclick="display()">Save</button>
         <div id="demo"></div>
@@ -26,13 +43,13 @@
         <table id="customers">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Price</th>
-                    <th>description</th>
-                    <th>category</th>
-                    <th>image</th>
-                    <th>rating</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Mobile</th>
+                    <th>Gender</th>
+                    <th>Hobies</th>
+                    <th>Subject</th>
                 </tr>
             </thead>
             <tbody id="test">
