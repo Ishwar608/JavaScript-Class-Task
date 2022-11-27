@@ -54,16 +54,11 @@ function displayTableData(value) {
 }
 
 
-function validation() {
-   for(let i=0;i<d.length;i++) {
-    if(d.elements[i].checked == false && d.elements[i].empty){
-        alert("Please Fill Box");
-        break;
-    }
-    else{
-        display();
-        break;
-    }
-   }
-}
+function checkNumber(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
 
+         return true;
+      }
