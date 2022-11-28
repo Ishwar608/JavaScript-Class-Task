@@ -29,7 +29,7 @@ font-family: 'Voces', cursive;
     width: 100px;
     margin: 5px;
 }
-input{
+.search{
     width: 500px;
     margin: 4px -7px 5px 50px;
     padding: 6px 33px;
@@ -121,5 +121,7 @@ span{
     color: #2874f0;
     
 }
-
+.q{
+    width: 50px;
+}
 /* -------------------------- Card End Here ------------------ */
