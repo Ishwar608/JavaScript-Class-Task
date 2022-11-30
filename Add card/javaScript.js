@@ -316,7 +316,7 @@ display1 = () => {
                     <div><label>Quantity : - </label><input type="number" id="qty" class="q" onkeypress='ttlqty()'></div>
                     <div>Total : -<span id=total> </span></div>
                     <button class="btn-1" onclick=' delItem(${index})'>Delete</button>
-                    <button class="btn-1" onclick=' ${display()}'>Go To Back</button>
+                    <button class="btn-1" onclick=' display()'>Go To Back</button>
                 </div>
             </div>
     `
