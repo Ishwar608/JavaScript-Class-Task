@@ -291,7 +291,7 @@ addCard = (pindex) => {
     return false;
   }
   else {
-
+    
     cartArr.push(addItem[0]);
   }
 
@@ -313,7 +313,13 @@ display1 = () => {
                     <p class="title">${value.title}</p>
                     <p class="price">$ ${value.price}</p>
                 </div>
-                    <div><label>Quantity : - </label><input type="number" id="qty" class="q" onkeypress='ttlqty()'></div>
+                     <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
                     <div>Total : -<span id=total> </span></div>
                     <button class="btn-1" onclick=' delItem(${index})'>Delete</button>
                     <button class="btn-1" onclick=' display()'>Go To Back</button>
