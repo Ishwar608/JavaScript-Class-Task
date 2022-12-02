@@ -11,11 +11,11 @@
 
 <body>
     <div class="container">
-        <form aciton="#" id="frm" target="_self" onsubmit="return display()">
+        <form aciton="#" id="frm" target="_self">
             <h1>Sign in</h1>
             <div>
                 <label for="firstName">First Name</label>
-                <input type="text" name="firstname" required>
+                <input type="text" name="firstName" required>
                 <b><span class="formerror"></span></b>
             </div>
             <div>
@@ -41,7 +41,7 @@
                 <input type="email" name="Email">
                 <b><span class="formerror"></span></b>
             </div>
-            <div>
+            <div>0
                 <label for="Gender">Gender</label>
                 <input type="radio" name="gender" value="Male"> Male
                 <input type="radio" name="gender" value="Female"> Female
@@ -67,9 +67,9 @@
 
             </div>
 
-            <input class="but" type="submit" value="Submit">
-
+            
         </form>
+        <input class="but" type="submit" value="Submit" onclick="display()">
 
         <div id="demo"></div>
 
