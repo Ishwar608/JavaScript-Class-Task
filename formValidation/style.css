@@ -12,7 +12,7 @@
     
 }
 form{
-    width: 42%;
+    width: 45%;
     margin: auto;
     padding: 10px 30px;
     border: 2px solid black;
@@ -30,9 +30,9 @@ h1{
 }
 label{
     display: inline-block;
-    width: 200px;
+    width: 100px;
 }
-button{
+.but{
     width: 200px;
     margin: 10px 100px;
     padding: 5px 10px;
@@ -76,6 +76,7 @@ table {
     background-color: #04AA6D;
     color: white;
 }
+
 input[type="radio"],input[type="checkbox"]{
     width: auto;
 }
@@ -100,4 +101,7 @@ select{
 .btn:hover{
     background-color: blue;
     color: white;
+}
+.formerror {
+    color: red;
 }

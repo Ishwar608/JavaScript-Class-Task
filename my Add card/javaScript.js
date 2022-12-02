@@ -291,7 +291,7 @@ addCard = (pindex) => {
     return false;
   }
   else {
-    
+    addItem[0]['qty'] = 1;
     cartArr.push(addItem[0]);
   }
 
@@ -301,11 +301,9 @@ addCard = (pindex) => {
 display1 = () => {
   document.getElementById('dis').innerHTML = "";
 
-  
-    let myData = cartArr.map(function (value, index) {
-      return `
-    
-    <div class="item">
+
+  let myData = cartArr.map(function (value, index) {
+    return `<div class="item">
                 <div class="image">
                     <img src="${value.image}" alt="photo">
                 </div>
@@ -313,26 +311,29 @@ display1 = () => {
                     <p class="title">${value.title}</p>
                     <p class="price">$ ${value.price}</p>
                 </div>
-                     <select>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                    <div>Total : -<span id=total> </span></div>
+                <div>
+                  <span>Quantity :- <span>
+                <select onclick="addQty(${index},this)">  
+                      <option value="1">${value.qty}</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                </div>
                     <button class="btn-1" onclick=' delItem(${index})'>Delete</button>
                     <button class="btn-1" onclick=' display()'>Go To Back</button>
-                </div>
-            </div>
-    `
-    });
-    document.getElementById('dis').innerHTML = myData.join(" ");
-    
-    if (cartArr.length == 0) {
-     
-      document.getElementById('imError').innerHTML = `<img src="error.PNG" alt="">`;
-    }
+                
+            </div>`
+  });
+  document.getElementById('totalBill').innerHTML = +cartArr.reduce((accum, item) => accum + item.price * item.qty, 0)
+
+  document.getElementById('dis').innerHTML = myData.join(" ");
+
+  if (cartArr.length == 0) {
+
+    document.getElementById('imError').innerHTML = `<img src="error.PNG" alt="">`;
+  }
 
 }
 
@@ -342,8 +343,13 @@ delItem = (item) => {
   cardVal(cartArr);
 }
 
-ttlqty= () =>{
- let b = +document.getElementById('qty').value;
- let t = cartArr.price * b;
- document.getElementById('total').innerHTML = t;
+ttlqty = () => {
+  let b = +document.getElementById('qty').value;
+  let t = cartArr.price * b;
+  document.getElementById('total').innerHTML = t;
+}
+function addQty(index,t){
+  let finalqty = t.value;
+  cartArr[index].qty = finalqty;
+display1();
 }
