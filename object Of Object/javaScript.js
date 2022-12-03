@@ -22,6 +22,7 @@ display = (data) =>{
                             val += `<td>${tblVal[key][key1][key3]}</td>`
 
                             }
+                            
                         }
                         else{
                             val += `<td>${tblVal[key][key1]}</td>`

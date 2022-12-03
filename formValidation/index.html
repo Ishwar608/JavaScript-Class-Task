@@ -32,16 +32,16 @@
             <div>
 
                 <label for="Mobile">Mobile</label>
-                <input type="text" name="Mobile" maxlength="13" value="+91" onkeypress="return checkNumber(event)">
+                <input type="text" name="Mobile" maxlength="10" placeholder="+91" onkeypress="return checkNumber(event)">
                 <b><span class="formerror"></span></b>
             </div>
             <div>
 
-                <label for="Mobile">Email</label>
+                <label for="email">Email</label>
                 <input type="email" name="Email">
                 <b><span class="formerror"></span></b>
             </div>
-            <div>0
+            <div>
                 <label for="Gender">Gender</label>
                 <input type="radio" name="gender" value="Male"> Male
                 <input type="radio" name="gender" value="Female"> Female
@@ -69,7 +69,8 @@
 
             
         </form>
-        <input class="but" type="submit" value="Submit" onclick="display()">
+
+    <input class="but" type="submit" value="Submit" onclick="display()">
 
         <div id="demo"></div>
 
