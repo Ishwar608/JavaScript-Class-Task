@@ -48,12 +48,6 @@ function display() {
 
                     }
                     break;
-                    case "radio":
-                        if (d.elements[i].checked !== true) {
-                            seterror(i, "*Length of cannot be zero!");
-                            validation = false;
-                       }
-                    break
             }
         } 
 
