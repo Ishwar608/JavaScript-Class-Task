@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Table Sorting/style.css">
     <title>Dynamic Form</title>
+    <style>
+        input{
+            margin: 5px;
+        }
+        button{
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-    <button id="btn">add</button>
-    <form action="" id="frm">
-        <div id="inputBOx">
+    
+    <div class="container">
+        <button id="btn">Add</button>
+        <form action="" id="frm">
             
-        </div>
-    </form>
+        </form>
+        <button onclick="display()">Sumbit</button>
+
+
+        <h1>Prodecuts Details</h1>
+        <table id="customers">
+            <thead >
+                <tr id="tblhead">
+
+                </tr>
+            </thead>
+            <tbody id="tblbody">
+    
+            </tbody>
+        </table>
+        
+
+       </div>
 </body>
 <script src="javascript.js"></script>
 </html>
