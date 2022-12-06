@@ -55,12 +55,12 @@ function display() {
   document.getElementById('person-img').src = reviews[index].img;
 }
 function pre() {
-  if(index <= reviews.length-1) 
+  if(index <reviews.length) 
     index = index - 1; 
     display();
 }
 function main() {
-  if(index <= reviews.length-1) 
+  if(index < reviews.length) 
     index = 0; 
     display();
 }

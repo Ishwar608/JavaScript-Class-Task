@@ -3,7 +3,6 @@ let myData = [];
 
 
  document.getElementById('btn').addEventListener('click',()=>{
-    document.getElementById('frm').innerHTML = "";
      let creatediv = document.createElement('div');
 
      let sub = document.createElement('input');
@@ -26,10 +25,6 @@ let myData = [];
      creatediv.appendChild(mark);
 
      document.getElementById('frm').appendChild(creatediv);
-
-
-    
-
     
  });
 
