@@ -7,10 +7,6 @@
     background-color: #ccc;
   }
 .switch1 {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
     background-color: #2196F3;
   }
   .switch input { 
