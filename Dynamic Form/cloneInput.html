@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone the input</title>
+    <style>
+        input{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+        <div id="add"></div>
+        <div id="add1"></div>
+
+        <button id="btn">add Input</button>
+</body>
+<script>
+    document.getElementById('btn').addEventListener('click',()=>{
+        let inpt = document.createElement('input');
+        inpt.name = "fname";
+        inpt.type="text";
+        inpt.placeholder = "Enter your Name"
+
+        document.getElementById('add').appendChild(inpt);
+
+        const inpt2=document.getElementById('add').lastChild;
+        const clone = inpt2.cloneNode(true);
+        document.getElementById('add1').appendChild(clone);
+
+})
+</script>
+</html>

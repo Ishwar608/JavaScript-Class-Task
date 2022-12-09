@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            
+            font-size: 30px;
+            font-weight: bold;
+            margin:15% auto;
+            width: 50%;
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Ishwar Watch</p>
+        <p id="time"></p>
+    </div>
+</body>
+<script>
+     timeNew = () => {
+        setInterval(()=>{
+            document.getElementById('time').innerHTML = new Date().toLocaleTimeString(); 
+        },1000)
+    }
+    timeNew();
+</script>
+</html>
