@@ -1,11 +1,12 @@
 // let d = document.forms['frm'];
 
 let getData = '';
+let isEdit = -1;
 
 Submit = () =>{
-    
+    document.getElementById('error').innerHTML =""; 
    if(document.getElementById('fname').value.length == 0){
-    alert("Plaese  Enter Name")
+    document.getElementById('error').innerHTML = "con't blank Please Fill the Field"
    }
    else{
 
@@ -14,13 +15,19 @@ Submit = () =>{
            localStorage.setItem("Name",document.getElementById('fname').value);
        }
        else{
-           let newData = localStorage.getItem('Name');
-           
-           let myData = newData.split(" ");
-           
-           myData.push(document.getElementById('fname').value);
-           
-           localStorage.setItem('Name',myData.toString());
+           let newData = localStorage.getItem('Name').split(",");
+           if(isEdit != -1){
+            newData[isEdit]=document.getElementById('fname').value;
+            localStorage.setItem('Name',newData.toString());
+
+           }
+           else{
+               
+            newData.push(document.getElementById('fname').value);
+               
+               localStorage.setItem('Name',newData.toString());
+           }
+           isEdit=-1;
        }
    }
    
@@ -35,7 +42,7 @@ display = () =>{
     
 
     document.getElementById("dis").innerHTML = getData.map((element,index)=>{
-        return `<div>${element}<button onclick="deleteName(${index})">Delete</button><button onclick="editName(${index})">Edit</button></div>`
+        return `<div><p class="con">${element}</p><button onclick="deleteName(${index})">Delete</button><button onclick="editName(${index})">Edit</button></div>`
     }).join("");
      
     
@@ -48,20 +55,8 @@ deleteName = (i) =>{
     // console.log(getData);
     display();
 }
-let a = 0;
 
-// editName = (i) =>{
-    
-//     if(a==1){
-//         getData[i]= document.getElementById('fname').value;
-        
-//     }
-//     {
-
-//         document.getElementById('fname').value = getData[i];
-        
-//     }
-
-//     console.log(getData);
-//     console.log(a);
-// }
+editName = (i) =>{
+    isEdit = i;
+    document.getElementById('fname').value=getData[i];
+}

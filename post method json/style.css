@@ -1,0 +1,18 @@
+div{
+    margin: 5px;
+}
+input{
+    padding: 5px 10px;
+}
+.container{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+label{
+    display: inline-block;
+    width: 280px;
+}

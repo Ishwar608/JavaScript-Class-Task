@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Post And Get The data</title>
+ 
 </head>
 <body>
-    
+    <div class="container">
+        <form action="">
+            <select name="title" id="title">
+                <option value="Mr">Mr</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>
+              </select>
+                <div>
+                    <label for="firstname">Enter Your Name :-</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Enter Your Name" required/>
+                </div>
+                <div>
+                    <label for="lastName">Enter Your Last Name :-</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Enter Your Last Name" required/>
+                </div>            
+                <div>
+                    <label for="email">Enter Your Email :-</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Your email" required/>
+                </div>            
+                <div>
+                    <label for="password">Enter Your Password:-</label>
+                    <input type="password" name="password"  id="password" placeholder="Enter Your Password" required/>
+                </div>            
+                <div>
+                    <label for="confirmPassword">Enter Your Con Password :-</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter Your confirmPassword" required/>
+                </div>
+                <div>
+                    <label>
+                    <input type="checkbox"  name="trem" required>I Accept the trems and condition</label>
+                </div>
+                
+                <input type="submit"  value="save" onclick="sendData()"/>
+            </form>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
