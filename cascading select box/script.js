@@ -1,164 +1,102 @@
-let myData = [
-    {
-        countryName: "india",
+var mydata = [
 
+
+    {
+
+        countyName: 'India',
         state: [
             {
-                stateName: "Andhra Pradesh",
-                city: [
-                    "Adoni",
-                    "Amalapuram",
-                    "Anakapalle",
-                    "Anantapur",
-                    "Bapatla",
-                    "Bheemunipatnam",
-                    "Bhimavaram",
-                    "Bobbili",
-                    "Chilakaluripet",
-                    "Chirala",
-                    "Chittoor",
-                    "Dharmavaram",
-                    "Eluru",
-                    "Gooty"
-
-                ]
+                name: "gujrat",
+                city: ["vadodara", "anand", "rajkot"]
             },
             {
-                stateName: "Assam",
-                city: [
-                    "Barpeta",
-                    "Bongaigaon City",
-                    "Dhubri",
-                    "Dibrugarh",
-                    "Diphu",
-                    "Goalpara",
-                    "Guwahati",
-                    "Jorhat",
-                    "Karimganj",
-                    "Lanka",
-                    "Lumding",
-                    "Mangaldoi",
-                    "Mankachar",
-                    "Margherita",
-                    "Mariani",
-                    "Marigaon",
-                    "Nagaon",
-                    "Nalbari",
-                    "North Lakhimpur",
-                    "Rangia"
-
-                ]
-            },
-            {
-                stateName: "Bihar",
-                city: [
-                    "Araria",
-                    "Arrah",
-                    "Arwal",
-                    "Asarganj",
-                    "Aurangabad",
-                    "Bagaha",
-                    "Barh",
-                    "Begusarai",
-                    "Bettiah",
-                    "Bhabua",
-                    "Bhagalpur",
-                    "Buxar",
-                    "Chhapra",
-                    "Darbhanga",
-                    "Dehri-on-Sone",
-                    "Dumraon"
-
-                ]
-            },
-            {
-                stateName: "Rajasthan",
-                city: [
-                    "Ajmer",
-                    "Alwar",
-                    "Bikaner",
-                    "Bharatpur",
-                    "Bhilwara",
-                    "Jaipur*",
-                    "Jodhpur",
-                    "Lachhmangarh",
-                    "Ladnu",
-                    "Lakheri",
-                    "Lalsot",
-                    "Losal",
-                    "Makrana",
-                    "Malpura",
-                    "Mandalgarh",
-                    "Mandawa"
-                ]
-            },
-            {
-                stateName: "Gujarat",
-                city: [
-                    "Adalaj",
-                    "Ahmedabad",
-                    "Amreli",
-                    "Anand",
-                    "Anjar",
-                    "Ankleshwar",
-                    "Bharuch",
-                    "Bhavnagar",
-                    "Bhuj",
-                    "Chhapra",
-                    "Deesa",
-                    "Dhoraji",
-                    "Godhra",
-                    "Jamnagar",
-                    "Kadi",
-                    "Kapadvanj",
-                    "Keshod",
-                    "Khambhat",
-                    "Lathi",
-                    "Limbdi"
-                ]
+                name: "mahrastra",
+                city: ["pune", "mumbai"]
             }
+
         ]
 
     },
 
     {
-        countryName: "Shree lanka",
+
+        countyName: 'Canada',
         state: [
-
             {
-                stateName: "Bihar",
-                city: [
-                    "Araria",
-                    "Arrah",
-                    "Arwal",
-                    "Asarganj",
-                    "Aurangabad",
-                    "Bagaha",
-                    "Barh",
-                    "Begusarai",
-                    "Bettiah",
-                    "Bhabua",
-                    "Bhagalpur",
-                    "Buxar",
-                    "Chhapra",
-                    "Darbhanga",
-                    "Dehri-on-Sone",
-                    "Dumraon"
-
-                ]
-
+                name: "Ontario",
+                city: ["Toronto", "Bramtomp"]
+            },
+            {
+                name: "Alberta",
+                city: ["Calgary"]
             }
+
         ]
 
     }
-]
-
-document.getElementById('country').addEventListener('click',()=>{
-
-    let lh = myData.map((val)=>{
-        return `<option value="${val.countryName}">${val.countryName}</option>`
-    })
-    document.getElementById('country').innerHTML = lh.join(" ");
 
 
-})
+
+];
+
+
+
+
+
+function bindCountry() {
+    let mycountry = mydata.map((elelment) => {
+        return `<option value=${elelment.countyName}>${elelment.countyName} </option>`;
+    });
+
+    document.getElementById("country").innerHTML = mycountry.join(" ");
+
+
+    document.getElementById("country").onchange();
+    document.getElementById("state").onchange();
+
+}
+
+function bindState() {
+    // alert("country");
+    let mycountry = document.getElementById("country").value;
+
+    let mystate = mydata.find((elelment) => {
+
+        return elelment.countyName == mycountry
+    }).state.map((value) => {
+
+        return `<option value=${value.name}>${value.name} </option>`;
+    });
+
+    document.getElementById("state").innerHTML = mystate.join(" ");
+
+
+
+
+}
+
+function bindCity() {
+
+    let mycountry = document.getElementById("country").value;
+    let mystateD = document.getElementById("state").value;
+
+    let mystate = mydata.find((elelment) => {
+
+        return elelment.countyName == mycountry
+    }).state.find((y) => {
+        return y.name == mystateD;
+    }).city.map((value) => {
+
+        return `<option value=${value}>${value} </option>`;
+    });
+
+    document.getElementById("city").innerHTML = mystate.join(" ");
+
+
+
+
+}
+
+
+
+bindCountry();
