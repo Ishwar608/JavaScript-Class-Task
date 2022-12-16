@@ -69,10 +69,6 @@ function bindState() {
     });
 
     document.getElementById("state").innerHTML = mystate.join(" ");
-
-
-
-
 }
 
 function bindCity() {
