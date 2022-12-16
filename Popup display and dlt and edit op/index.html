@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Table Sorting</title>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Prodecuts Details</h1>
+        <table id="customers">
+            <thead>
+                <tr id="tblhead">
+
+                </tr>
+            </thead>
+            <tbody id="tblbody">
+
+            </tbody>
+        </table>
+
+        <div class="data" id="dis">
+            <form id="frm">
+                <div>
+                    <input type="text" id="userId" placeholder="Enter Your UserId">
+                    </div>
+                    <div>
+                    <textarea  id="title" cols="33" rows="5"></textarea>
+                        <!-- <input type="text" id="title" placeholder="Enter Your title"> -->
+                    </div>
+                    <div>
+                    <textarea  id="body" cols="33" rows="10"></textarea>
+                    <!-- <input type="text" id="body" placeholder="Enter Your body"> -->
+            </div>
+            </form>
+            <button class="btn" onclick="saveData()">Save</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
