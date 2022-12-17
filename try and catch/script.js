@@ -35,10 +35,8 @@ display = (data) => {
     }
     finally {
 
-        setTimeout(() => {
             document.getElementById('tblhead').innerHTML = printKey.join(' ');
             document.getElementById('tblbody').innerHTML = printData.join(' ');
-        }, 3000)
     }
 }
 

@@ -21,8 +21,5 @@ function sendData() {
         .then(y => {
             console.log(y);
         })
-
         
-
-
 }
