@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>login Form</title>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <div class="logo">
+           <a href=""> <img src="image/lastfm-logo.png" alt="logo"></a>
+           <span class="Ishugram">Ishugram</span>
+        </div>
+        <div>
+            <button class="btn" onclick="loginS()">Login</button>
+            <!-- <p>🤦‍♀️🙌👍🤦‍♂️🤦‍♀️</p> -->
+        </div>
+    </nav>
+</div>
+        
+    </div>
+    <div class="container">
+        <div id="login">
+            <form id="frm1">
+                <h3>Login</h3>
+                <div>
+                    <label for="email">Enter a Email-ID</label>
+                    <input type="text" value=""  id="email"  required/>
+                <b><span class="formerror"></span></b>
+                </div>
+                <div>
+                    <label for="password">Enter a Passord</label>
+                    <input type="password"  id="password" />
+                <b><span class="formerror"></span></b>
+                </div>
+                <div class="forgotten">
+                <a href="">Forgotten password</a>
+                </div>
+                
+            </form>
+            <input type="submit" onclick="login()" value="Login" />
+
+
+            
+            <a href="SignUp.html">
+            <button class="btn" onclick="createAcc()">Create New Account</button>
+
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr id="theadP">
+
+                </tr>
+            </thead>
+            <tbody>
+                    <tr id="tbodyP">
+
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
