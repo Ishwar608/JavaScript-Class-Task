@@ -21,7 +21,14 @@ document.getElementById('btn').addEventListener('click',()=>{
                     id+=1;
                 break;   
                 case 'email':
-                    i.type="email"  
+                    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(i.value))
+                    {
+                      return (true)
+                    }else{
+                        seterror(id,'"You have entered an invalid email address!"')
+                    }
+                    id+=1;
+                  }
                 break; 
             }
 
