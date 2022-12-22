@@ -1,4 +1,8 @@
-class myLogin{
+let myArray = [];
+
+let mykey = [];
+
+class myModul{
     
 
     constructor (entity,data){
@@ -23,9 +27,29 @@ class myLogin{
     
     }
 
+    display = (myJson) => {
+        myArray = myJson;
+    
+        document.getElementById('theadP').innerHTML = "";
+        document.getElementById('tbodyP').innerHTML = "";
+        for (const key in myArray) {
+            if (key != "jwtToken") {
+                // console.log(iterator);
+                document.getElementById('theadP').innerHTML += `<th>${key}</th>`
+            }
+        }
+    
+        for (const key in myArray) {
+    
+            if (key != "jwtToken") {
+                // console.log(key);
+                document.getElementById('tbodyP').innerHTML += `<td>${myArray[key]}</td>`
+            }
+        }
+    
+    }
     
     
 }
 
-module.extends = myLogin;
-// export default myLogin;
+export default myModul;

@@ -1,36 +1,11 @@
-// import {myLogin} from "./modul";
-let myLogin = require("./modul.js");
 
+import myModul from "./modul.js";
 
 let validate = true;
-let myArray = [];
-
-let mykey = [];
-
-display = (myJson) => {
-    myArray = myJson;
-
-    document.getElementById('theadP').innerHTML = "";
-    document.getElementById('tbodyP').innerHTML = "";
-    for (const key in myArray) {
-        if (key != "jwtToken") {
-            // console.log(iterator);
-            document.getElementById('theadP').innerHTML += `<th>${key}</th>`
-        }
-    }
-
-    for (const key in myArray) {
-
-        if (key != "jwtToken") {
-            // console.log(key);
-            document.getElementById('tbodyP').innerHTML += `<td>${myArray[key]}</td>`
-        }
-    }
-
-}
 
 
-login = () =>{
+ login = () =>{
+
     validation();
 
     let myData = {
@@ -46,7 +21,8 @@ login = () =>{
     }
      
 }
-signUp = () =>{
+
+ signUp = () =>{
     validation();
 
     let myData = {
