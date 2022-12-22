@@ -1,6 +1,15 @@
-fetch("http://localhost:8080/files/").then(y => y.json())
-    .then(myJson => getFileD(myJson));
-let myArray = [];
+let myJson =[];
+const xhttp = new XMLHttpRequest();
+xhttp.onload = function() {
+   myJson = JSON.parse(this.responseText);
+//    console.log(myJson);
+   getFileD(myJson)
+}
+xhttp.open("GET", "http://localhost:8080/files/");
+xhttp.send();
+
+
+    let myArray = [];
     getFileD = (data) => {
         let key = [];
         myArray = data;
@@ -36,8 +45,6 @@ uploadFile = () => {
     }).then(y => y.json()).then(y => {
         console.log(y);
     })
-
-    console.log(files);
 
 }
 
