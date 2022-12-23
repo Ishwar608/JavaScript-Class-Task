@@ -21,13 +21,13 @@ xhttp.send();
             document.getElementById("theadP").innerHTML += `<th>${kay}</th>`;
         }
         
-        document.getElementById("tbodyP").innerHTML = data.map((element,index)=>{
+        document.getElementById("tbodyP").innerHTML = data.map((element)=>{
             let text = '';
             for (const key in element) {
                 text += `<td>${element[key]}</td>`;
             }
 
-            return `<tr>${text}<td><button class="btn" onclick=Ddownload(${index})>Download</button></td></tr>`;
+            return `<tr>${text}<td><a href="${element.url}"><button class="btn">Download</button></a></td></tr>`;
         }).join("");
     }
 
@@ -49,9 +49,9 @@ uploadFile = () => {
 }
 
 
-Ddownload = (index) =>{
-    let URL = myArray[index].url;
-    // console.log(URL);
-window.location.assign(URL);
+// Ddownload = (index) =>{
+//     let URL = myArray[index].url;
+//     // console.log(URL);
+// window.location.assign(URL);
 
-}
+// }
