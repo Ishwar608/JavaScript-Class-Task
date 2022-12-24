@@ -101,8 +101,8 @@ validation = () => {
 
     clearErrors();
     validate = true;
-    for (const i in frm) {
-
+    for (let i=0;i<frm.length;i++) {
+        
         if (frm.elements[i] !== undefined) {
             
             switch (frm.elements[i].type) {

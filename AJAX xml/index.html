@@ -13,14 +13,11 @@
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
-    alert("This is inside");
-    console.log(this);
     document.getElementById("demo").innerHTML = JSON.parse(this.responseText);
   }
   xhttp.open("GET", "https://jsonplaceholder.typicode.com/users");
   xhttp.send();
 
-  alert("This is the data")
 }
 </script>
 
