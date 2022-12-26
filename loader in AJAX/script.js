@@ -1,21 +1,21 @@
 
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function (){
-    document.getElementById("myLoader").style.display = "block";
-    setTimeout(() => {
-    document.getElementById("myLoader").style.display = "none";
+    if(xhttp.readyState <= 3){
+
+        document.getElementById("myLoader").style.display = "block";
+    }else{
+
+        document.getElementById("myLoader").style.display = "none";
+    }
         
-    }, 2000);
 }
 
 xhttp.onload = function() {
     let y = JSON.parse(this.responseText);
-    setTimeout(() => {            
         display(y);
-        }, 2000);
-    
 }
-xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts",false);
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts");
 xhttp.send();
 
 display = (myData) =>{
