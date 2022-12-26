@@ -31,12 +31,14 @@ display = (data) => {
 
         setTimeout(() => {
             document.getElementById('myLoader').style.display = "none";
-        }, 3000)
+        }, 5000)
     }
     finally {
 
+        setTimeout(() => {
             document.getElementById('tblhead').innerHTML = printKey.join(' ');
             document.getElementById('tblbody').innerHTML = printData.join(' ');
+        },5000);
     }
 }
 
