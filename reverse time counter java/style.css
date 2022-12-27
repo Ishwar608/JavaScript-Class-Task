@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background: linear-gradient(46.19deg, #000000 5.66%, #434343 94.35%);
+  }
+  .container{
+    max-width: 100%;
+    margin: auto;
+  }
+  .body {
+    height: 100vh;
+    background: url("https://assets.codepen.io/6060109/versus-bg.png") no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: space-between;
+    width: 100%;
+    font-family: Paladins;
+  }
+  
+  .mayweather-container, .logan-container {
+    position: relative;
+  }
+  
+  .mayweather-container {
+    height: 100%;
+    width: 50%;
+    background: bottom left / contain no-repeat url("https://assets.codepen.io/6060109/mayweather.png");
+  }
+  .logan-container {
+    height: 100%;
+    width: 50%;
+    background: bottom right / contain no-repeat url("https://assets.codepen.io/6060109/loganpaul.png");
+  }
+  
+  .text-container {
+    background: url("https://assets.codepen.io/6060109/yellow-text-wrapper.png") no-repeat;
+    height: 15%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    bottom: 10%;
+    font-size: 20px;
+  }
+  
+  .text-container-1 {
+    margin-left: -10%;
+  }
+  
+  .text-container-2 {
+    margin-left: 28%;
+  }
+  .name {
+    margin-left: 18%;
+  }
+  .clock {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: white;
+    font-style:italic;
+    font-weight: 800;
+  }
