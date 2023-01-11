@@ -1,11 +1,14 @@
-fetch("https://jsonplaceholder.typicode.com/posts").then(y=>y.json())
-.then(myJson => display(myJson));
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then(y=>y.json())
+.then(myJson => {
+    display(myJson);
+});
 
 let myArray = [];
 let dkey = [];
 display = (data) => {
     myArray = data;
- 
+   
     let kay = Object.keys(myArray[0]);
     dkey = kay;
     let printKey = kay.map((val,index)=>{

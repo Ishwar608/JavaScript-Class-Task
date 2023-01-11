@@ -4,7 +4,7 @@ let ediColor = -1;
 async function getValue() {
     let url = await fetch("https://jsonplaceholder.typicode.com/posts");
     let y = await url.json();
-
+ 
     await new Promise((suceess, reject) => {
         if (url.status == 200) {
             suceess(display(y))
@@ -44,6 +44,7 @@ searchData = () => {
 
         return newData.indexOf(txt) >= 0;
     })
+    
     console.log(filterData);
 
     let tr = document.getElementsByTagName("tr");

@@ -12,7 +12,6 @@ fetch("https://jsonplaceholder.typicode.com/todos").then(y=>y.json()).then(y=>{
 function displayPage(y) { 
     myData = y;
     totalPage = Math.ceil(y.length / perPage);
-    console.log(totalPage);
 
     disButton(startInd,endInd);
     disData(0,perPage);
@@ -52,10 +51,9 @@ function pageButton(currentPage) {
 
     disData(start,end);
 }
+
 function nextButton() {
-   
-  
-    if(endInd<totalPage && startInd>=1)  {
+       if(endInd<totalPage && startInd>=1)  {
         startInd = startInd + 3;
         endInd = endInd + 3;
         }
@@ -65,8 +63,8 @@ function nextButton() {
         }
     displayPage(myData);
 }
+
 function preButton() {
-debugger;
     if(endInd<=totalPage && startInd>1)  {
     startInd = startInd - 3;
     endInd = endInd - 3;
