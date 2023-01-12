@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <form action="" id="frm">
+                <h2>Registration Form</h2>
+                <div>
+                    <input type="text" name="fname" required placeholder="Enter your First Name">
+                    <div>
+                        <b><span class="formerror"></span></b>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" name="lname" required placeholder="Enter your Last Name">
+                    <div>
+                        <b><span class="formerror"></span></b>
+                    </div>
+                </div>
+                <div>
+                    <input type="tel" name="phone" required placeholder="+917734832608" maxlength="13"
+                        pattern="[+]{1}[0-9]{1}[0-9]{1}[0-9]{10}">
+                        <div>
+                            <b><span class="formerror"></span></b>
+                        </div>
+                </div>
+                <div>
+                    <input type="email" name="email" required placeholder="Enter your Email-ID">
+                    <div>
+                        <b><span class="formerror"></span></b>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" onclick="val(event)">
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="main.js"></script>
+
+</html>
