@@ -1,7 +1,7 @@
 var countryCodes = {};
 var base64flags = {};
 
-function countryCellRenderer(params) {
+function productImage(params) {
   //  console.log(params.value);
   return `<img alt="image not found" src="${params.value}" width="100px" height="50px">`;
 }
@@ -19,7 +19,7 @@ const columnDefs = [
   { field: 'category' },
   {
     field: 'image',
-    cellRenderer: countryCellRenderer,
+    cellRenderer: productImage,
   },
 
 ];
