@@ -244,6 +244,8 @@ const myJSON = [
 
 
 let cartArr = [];
+
+
 function display() {
   document.getElementById('dis').innerHTML = "";
 
@@ -299,8 +301,8 @@ addCard = (pindex) => {
 }
 
 display1 = () => {
-  document.getElementById('dis').innerHTML = "";
 
+  document.getElementById('dis').innerHTML = "";
 
   let myData = cartArr.map(function (value, index) {
     return `<div class="item">

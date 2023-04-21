@@ -1,0 +1,25 @@
+.FormDiv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.FormDiv label {
+    display: inline-block;
+    width: 200px;
+}
+
+.FormDiv input {
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.FormDiv button {
+    padding: 10px;
+    margin-top: 10px;
+}
